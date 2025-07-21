@@ -45,9 +45,14 @@ def mudar_status():
     escolha_mudar_status = int(input("Digite o número do projeto que deseja alterar: "))
 
     for e, projeto in enumerate(projetos):
-        if projeto == escolha_mudar_status:
-            projeto["status"] = True
-    
+        try:
+            if e == escolha_mudar_status:
+                projeto["status"] = True
+
+                print(f"{projeto["titulo"]} alterado para {projeto["status"]} com sucesso!")
+
+        except:
+            print("Tivemos um problema ao mudar o status do projeto, tente novamente...")
     
 
 
